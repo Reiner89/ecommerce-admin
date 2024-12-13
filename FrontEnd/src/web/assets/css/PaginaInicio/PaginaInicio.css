@@ -1,0 +1,36 @@
+
+.slider-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  
+   
+  }
+  
+ 
+  .slider-track {
+    display: flex;
+    flex-direction: column;
+    animation: scrollVertical 20s linear infinite;
+  }
+  
+
+  .slider-image {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+  }
+  
+ 
+  @keyframes scrollVertical {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+  

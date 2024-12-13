@@ -1,0 +1,7 @@
+.nuevos-background {
+    background-image: url('.././Img//Nuevo/Pokemon-Template-Poke-Stop-test.gif'); 
+    background-size: cover;
+    opacity: initial;
+    background-repeat: no-repeat; 
+    background-position: center;
+  }

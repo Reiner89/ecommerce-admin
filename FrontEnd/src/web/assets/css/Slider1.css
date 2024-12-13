@@ -1,0 +1,26 @@
+
+.btn-effect-11:hover {
+    animation: changeBG 2s ease-in-out infinite;
+}
+
+@keyframes changeBG {
+    0% {
+        background-color: #12d8fa;
+    }
+
+    25% {
+        background-color: turquoise;
+    }
+
+    50% {
+        background-color: yellowgreen;
+    }
+
+    75% {
+        background-color: thistle;
+    }
+
+    100% {
+        background-color: #12d8fa;
+    }
+}
