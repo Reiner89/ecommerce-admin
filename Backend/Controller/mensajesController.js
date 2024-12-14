@@ -12,7 +12,7 @@ const obtenerChat = async (req, res) => {
       `SELECT 
           id_mensaje_usuario, id_mensaje_para, id_mensaje_desde, mensaje_usuario, mensaje_fecha
         FROM 
-          Mensajes_Usuarios
+          Mensajes
         WHERE 
           (id_mensaje_para = ? AND id_mensaje_desde = ?) 
           OR 

@@ -66,7 +66,7 @@ const guardarMensajes = async (message) => {
 
   try {
     const [result] = await poll.execute(
-      "INSERT INTO Mensajes_Usuarios (id_mensaje_desde, id_mensaje_para, mensaje_usuario) VALUES (?,?,?)",
+      "INSERT INTO Mensajes (id_mensaje_desde, id_mensaje_para, mensaje_usuario) VALUES (?,?,?)",
       [message.de, message.para, message.mensaje]
     );
 
