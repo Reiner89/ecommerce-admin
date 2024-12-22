@@ -12,16 +12,13 @@ export const SCategoria = () => {
       <div className="relative text-xs flex flex-col gap-3">
         {catProd.map((categoria) => (
           <p
-            key={categoria.id_categoria}
+            key={categoria.id}
             className="text-xs text-[rgb(96_125_139/1)] px-3 py-2 hover:bg-gray-200 cursor-pointer"
             onClick={() =>
-              catProductoSeleccionada(
-                categoria.nombre_categoria,
-                categoria.id_categoria
-              )
+              catProductoSeleccionada(categoria.name, categoria.id)
             }
           >
-            {categoria.nombre_categoria}
+            {categoria.name}
           </p>
         ))}
       </div>

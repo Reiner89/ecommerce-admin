@@ -4,7 +4,6 @@ import * as Styles from "../../../../../../../../Styles/Actions";
 import { SCategoria } from "../../../../../Components/Select/SCategoria";
 import { SColores } from "../../../../../Components/Select/SColores";
 import { SMarca } from "../../../../../Components/Select/SMarca";
-import { SSubCategoria } from "../../../../../Components/Select/SSubCategoria";
 import { useProdServices } from "../../../../../Hooks/useProdServices";
 
 export const RightNuevo = () => {
@@ -33,13 +32,6 @@ export const RightNuevo = () => {
     marcaProducto,
     setMarcaProducto,
     marcaProductoFiltrado,
-    subcategoriaProducto,
-    setSubcategoriaProducto,
-    refSubCatProd,
-    modalSubCatProd,
-    handleModalSubCatProd,
-    subCatProductoFiltrado,
-    subCatProductoBlur,
   } = useProdServices();
 
   return (
@@ -95,7 +87,7 @@ export const RightNuevo = () => {
             </div>
           </div>
           <div className="row w-full flex flex-col lg:flex-row justify-between gap-y-5 lg:gap-0">
-            <div className="cont-categoria relative flex flex-col w-full lg:w-[47%]">
+            <div className="cont-tipo relative flex flex-col w-full lg:w-[47%]">
               <div
                 ref={refCatProd}
                 onClick={handleModalCatProd}
@@ -124,56 +116,6 @@ export const RightNuevo = () => {
                   }`}
                 />
                 <SCategoria />
-              </div>
-            </div>
-            <div className="cont-subcategoria relative flex gap-x-1 w-full lg:w-[47%]">
-              <div
-                ref={refSubCatProd}
-                onClick={handleModalSubCatProd}
-                className="cont-input w-full"
-              >
-                <input
-                  type="text"
-                  className={Styles.inputL}
-                  id="subcategoriaProducto"
-                  placeholder=" "
-                  value={subcategoriaProducto}
-                  onChange={(e) => {
-                    subCatProductoFiltrado(e);
-                    setSubcategoriaProducto(e.target.value);
-                  }}
-                  onBlur={subCatProductoBlur}
-                  required
-                />
-                <label htmlFor="subcategoriaProducto" className={Styles.labelL}>
-                  SubCategoria
-                  <span className="relative text-red-700 ml-1">*</span>
-                </label>
-                <Down
-                  className={`absolute top-3.5 right-3 ${
-                    modalSubCatProd && "rotate-180 text-[#09c]"
-                  }`}
-                />
-                <SSubCategoria />
-              </div>
-            </div>
-          </div>
-          <div className="row w-full flex flex-col lg:flex-row justify-between gap-y-5 lg:gap-0">
-            <div className="cont-tipo relative flex flex-col w-full lg:w-[47%]">
-              <div className="cont-input w-full">
-                <input
-                  type="text"
-                  className={Styles.inputL}
-                  id="skuProducto"
-                  placeholder=" "
-                  value={formProd.skuProducto}
-                  onChange={changeProducto}
-                  required
-                />
-                <label htmlFor="skuProducto" className={Styles.labelL}>
-                  SKU
-                  <span className="relative text-red-700 ml-1">*</span>
-                </label>
               </div>
             </div>
             <div className="cont-marca relative flex gap-x-1 w-full lg:w-[47%]">

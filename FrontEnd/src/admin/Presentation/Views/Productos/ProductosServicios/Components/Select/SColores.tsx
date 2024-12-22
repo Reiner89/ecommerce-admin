@@ -13,13 +13,11 @@ export const SColores = () => {
       <div className="relative text-xs flex flex-col gap-3">
         {coloresProd.map((color) => (
           <p
-            key={color.id_color}
+            key={color.id}
             className="text-xs text-[rgb(96_125_139/1)] px-3 py-2 hover:bg-gray-200 cursor-pointer"
-            onClick={() =>
-              colorProductoSeleccionada(color.nombre_color, color.id_color)
-            }
+            onClick={() => colorProductoSeleccionada(color.name, color.id)}
           >
-            {color.nombre_color}
+            {color.name}
           </p>
         ))}
       </div>

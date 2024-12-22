@@ -1,6 +1,7 @@
 import { Card } from "@nextui-org/react";
 import Rating from "@mui/material/Rating";
 import CalificarProducto from "../CalificarProducto";
+
 const ReseñaProductos = () => {
     return (
         <div className="p-6 bg-white rounded-lg shadow-md flex w-[1400px] ">
@@ -38,7 +39,7 @@ const ReseñaProductos = () => {
                     <h4 className="font-semibold">Funciones básicas, pero no es el color de la imagen</h4>
                     <span className="text-sm text-gray-500 mb-2 block">por Juan - hace 1 mes</span>
                     <Rating value={3} readOnly size="small" />
-                    <p className="text-sm my-2">Teléfono básico, llamadas y mensajes.</p>
+                    <p className="text-sm my-2">Muy comodo</p>
                     <div className="flex space-x-4">
                         <button className="text-gray-600 hover:text-blue-600">👍</button>
                         <button className="text-gray-600 hover:text-blue-600">👎</button>

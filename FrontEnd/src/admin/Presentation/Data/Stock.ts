@@ -50,7 +50,7 @@ export interface ConsumoData {
   precioProducto: number;
   costoNetoUnitario: number;
   estado: boolean;
-  cantidad: number;
+  consumoCant: number;
   color: string;
   permitirRepetir: boolean;
   ventaSinStock: boolean;
@@ -58,6 +58,8 @@ export interface ConsumoData {
   unidadMedida: string;
   idDocumento: number;
   marca: string;
+  consumoLote: string;
+  consumoFechaVigencia: string;
 }
 
 export const Consumos: ConsumoData[] = [
@@ -69,7 +71,7 @@ export const Consumos: ConsumoData[] = [
     precioProducto: 80.0,
     costoNetoUnitario: 80.0,
     estado: true,
-    cantidad: 0,
+    consumoCant: 10,
     color: "Negro",
     permitirRepetir: false,
     ventaSinStock: false,
@@ -77,6 +79,8 @@ export const Consumos: ConsumoData[] = [
     unidadMedida: "Unidad",
     idDocumento: 1,
     marca: "Samsung",
+    consumoLote: "Lote 1",
+    consumoFechaVigencia: "2022-01-01",
   },
   {
     id: 2,
@@ -86,7 +90,7 @@ export const Consumos: ConsumoData[] = [
     precioProducto: 80.0,
     costoNetoUnitario: 80.0,
     estado: true,
-    cantidad: 0,
+    consumoCant: 10,
     color: "Negro",
     permitirRepetir: false,
     ventaSinStock: false,
@@ -94,6 +98,8 @@ export const Consumos: ConsumoData[] = [
     unidadMedida: "Unidad",
     idDocumento: 2,
     marca: "Samsung",
+    consumoLote: "Lote 1",
+    consumoFechaVigencia: "2022-01-01",
   },
   {
     id: 3,
@@ -103,7 +109,7 @@ export const Consumos: ConsumoData[] = [
     precioProducto: 80.0,
     costoNetoUnitario: 80.0,
     estado: true,
-    cantidad: 0,
+    consumoCant: 10,
     color: "Negro",
     permitirRepetir: false,
     ventaSinStock: false,
@@ -111,6 +117,8 @@ export const Consumos: ConsumoData[] = [
     unidadMedida: "Unidad",
     idDocumento: 3,
     marca: "Samsung",
+    consumoLote: "Lote 1",
+    consumoFechaVigencia: "2022-01-01",
   },
   {
     id: 4,
@@ -120,7 +128,7 @@ export const Consumos: ConsumoData[] = [
     precioProducto: 80.0,
     costoNetoUnitario: 80.0,
     estado: true,
-    cantidad: 0,
+    consumoCant: 10,
     color: "Negro",
     permitirRepetir: false,
     ventaSinStock: false,
@@ -128,6 +136,8 @@ export const Consumos: ConsumoData[] = [
     unidadMedida: "Unidad",
     idDocumento: 1,
     marca: "Samsung",
+    consumoLote: "Lote 1",
+    consumoFechaVigencia: "2022-01-01",
   },
   {
     id: 5,
@@ -137,7 +147,7 @@ export const Consumos: ConsumoData[] = [
     precioProducto: 80.0,
     costoNetoUnitario: 80.0,
     estado: true,
-    cantidad: 0,
+    consumoCant: 10,
     color: "Negro",
     permitirRepetir: false,
     ventaSinStock: false,
@@ -145,6 +155,8 @@ export const Consumos: ConsumoData[] = [
     unidadMedida: "Unidad",
     idDocumento: 2,
     marca: "Samsung",
+    consumoLote: "Lote 1",
+    consumoFechaVigencia: "2022-01-01",
   },
   {
     id: 6,
@@ -154,7 +166,7 @@ export const Consumos: ConsumoData[] = [
     precioProducto: 80.0,
     costoNetoUnitario: 80.0,
     estado: true,
-    cantidad: 0,
+    consumoCant: 10,
     color: "Negro",
     permitirRepetir: false,
     ventaSinStock: false,
@@ -162,6 +174,8 @@ export const Consumos: ConsumoData[] = [
     unidadMedida: "Unidad",
     idDocumento: 3,
     marca: "Samsung",
+    consumoLote: "Lote 1",
+    consumoFechaVigencia: "2022-01-01",
   },
   {
     id: 7,
@@ -171,7 +185,7 @@ export const Consumos: ConsumoData[] = [
     precioProducto: 80.0,
     costoNetoUnitario: 80.0,
     estado: true,
-    cantidad: 0,
+    consumoCant: 10,
     color: "Negro",
     permitirRepetir: false,
     ventaSinStock: false,
@@ -179,6 +193,8 @@ export const Consumos: ConsumoData[] = [
     unidadMedida: "Unidad",
     idDocumento: 1,
     marca: "Samsung",
+    consumoLote: "Lote 1",
+    consumoFechaVigencia: "2022-01-01",
   },
   {
     id: 8,
@@ -188,7 +204,7 @@ export const Consumos: ConsumoData[] = [
     precioProducto: 80.0,
     costoNetoUnitario: 80.0,
     estado: true,
-    cantidad: 0,
+    consumoCant: 10,
     color: "Negro",
     permitirRepetir: false,
     ventaSinStock: false,
@@ -196,6 +212,8 @@ export const Consumos: ConsumoData[] = [
     unidadMedida: "Unidad",
     idDocumento: 2,
     marca: "Samsung",
+    consumoLote: "Lote 1",
+    consumoFechaVigencia: "2022-01-01",
   },
   {
     id: 9,
@@ -205,7 +223,7 @@ export const Consumos: ConsumoData[] = [
     precioProducto: 80.0,
     costoNetoUnitario: 80.0,
     estado: true,
-    cantidad: 0,
+    consumoCant: 10,
     color: "Negro",
     permitirRepetir: false,
     ventaSinStock: false,
@@ -213,6 +231,8 @@ export const Consumos: ConsumoData[] = [
     unidadMedida: "Unidad",
     idDocumento: 3,
     marca: "Samsung",
+    consumoLote: "Lote 1",
+    consumoFechaVigencia: "2022-01-01",
   },
   {
     id: 10,
@@ -222,7 +242,7 @@ export const Consumos: ConsumoData[] = [
     precioProducto: 80.0,
     costoNetoUnitario: 80.0,
     estado: true,
-    cantidad: 0,
+    consumoCant: 10,
     color: "Negro",
     permitirRepetir: false,
     ventaSinStock: false,
@@ -230,6 +250,8 @@ export const Consumos: ConsumoData[] = [
     unidadMedida: "Unidad",
     idDocumento: 1,
     marca: "Samsung",
+    consumoLote: "Lote 1",
+    consumoFechaVigencia: "2022-01-01",
   },
   {
     id: 11,
@@ -239,7 +261,7 @@ export const Consumos: ConsumoData[] = [
     precioProducto: 80.0,
     costoNetoUnitario: 80.0,
     estado: true,
-    cantidad: 0,
+    consumoCant: 10,
     color: "Negro",
     permitirRepetir: false,
     ventaSinStock: false,
@@ -247,6 +269,8 @@ export const Consumos: ConsumoData[] = [
     unidadMedida: "Unidad",
     idDocumento: 2,
     marca: "Samsung",
+    consumoLote: "Lote 1",
+    consumoFechaVigencia: "2022-01-01",
   },
   {
     id: 12,
@@ -256,7 +280,7 @@ export const Consumos: ConsumoData[] = [
     precioProducto: 80.0,
     costoNetoUnitario: 80.0,
     estado: true,
-    cantidad: 0,
+    consumoCant: 10,
     color: "Negro",
     permitirRepetir: false,
     ventaSinStock: false,
@@ -264,5 +288,7 @@ export const Consumos: ConsumoData[] = [
     unidadMedida: "Unidad",
     idDocumento: 3,
     marca: "Samsung",
+    consumoLote: "Lote 1",
+    consumoFechaVigencia: "2022-01-01",
   },
 ];

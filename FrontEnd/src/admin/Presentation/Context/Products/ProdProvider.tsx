@@ -9,6 +9,7 @@ import {
 
 import {
   Color,
+  Colores,
   Producto,
   tablesCant,
   Almacenes,
@@ -20,7 +21,6 @@ import {
   CatProd,
   SubCatProd,
   MarcasProd,
-  ColoresProd,
 } from "../../../Interfaces/Productos/Productos";
 import { Pack, Packs } from "../../../Interfaces/Pack/Pack";
 import { Impuesto } from "../../../Interfaces/Impuestos/Impuestos";
@@ -30,7 +30,6 @@ import { ProdContext } from "./ProdContext";
 import {
   createProduct,
   getCategorias,
-  getColors,
   getMarcas,
   getProducts,
   getSubCategorias,
@@ -224,8 +223,8 @@ export const ProductsProvider = ({ children }: PropsWithChildren) => {
     varianteProducto: "",
     descripcionProducto: "",
     skuProducto: "",
-    destacadoProducto: "0",
-    estadoProducto: "Activo",
+    destacadoProducto: false,
+    estadoProducto: true,
     fechaCreado: Date.now(),
     fechaActualizado: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
     id_creador_producto: auth.id_usuario,
@@ -249,14 +248,14 @@ export const ProductsProvider = ({ children }: PropsWithChildren) => {
 
   // Marca / Color / Tipo
   const refColorProd = useRef<HTMLDivElement>(null);
-  const [coloresProd, setColoresProd] = useState<ColoresProd[]>([]);
+  const [coloresProd, setColoresProd] = useState<Color[]>([]);
   const [modalColorProd, setModalColorProd] = useState(false);
   const refCatProd = useRef<HTMLDivElement>(null);
   const [catProd, setCatProd] = useState<CatProd[]>([]);
   const [modalCatProd, setModalCatProd] = useState(false);
-  const refSubCatProd = useRef<HTMLDivElement>(null);
+  // const refSubCatProd = useRef<HTMLDivElement>(null);
   const [subCatProd, setSubCatProd] = useState<SubCatProd[]>([]);
-  const [modalSubCatProd, setModalSubCatProd] = useState(false);
+  // const [modalSubCatProd, setModalSubCatProd] = useState(false);
   const refMarcaProd = useRef<HTMLDivElement>(null);
   const [marcasProd, setMarcasProd] = useState<MarcasProd[]>([]);
   const [modalMarcaProd, setModalMarcaProd] = useState(false);
@@ -306,23 +305,13 @@ export const ProductsProvider = ({ children }: PropsWithChildren) => {
     }
   };
 
-  const loadColores = async () => {
-    const response = await getColors();
-
-    if (response.ok) {
-      setColoresProd(response.colores);
-    } else {
-      setColoresProd([]);
-    }
-  };
+  const loadColores = async () => {};
 
   // Abrir/Cerrar modales
   const handleModalColorProd = () => setModalColorProd(!modalColorProd);
   useOutsideClick(refColorProd, () => setModalColorProd(false));
   const handleModalCatProd = () => setModalCatProd(!modalCatProd);
   useOutsideClick(refCatProd, () => setModalCatProd(false));
-  const handleModalSubCatProd = () => setModalSubCatProd(!modalSubCatProd);
-  useOutsideClick(refSubCatProd, () => setModalSubCatProd(false));
   const handleModalMarcaProd = () => setModalMarcaProd(!modalMarcaProd);
   useOutsideClick(refMarcaProd, () => setModalMarcaProd(false));
   const handleModalAlmacen = () => setModalAlmacenProd(!modalAlmacenProd);
@@ -338,19 +327,17 @@ export const ProductsProvider = ({ children }: PropsWithChildren) => {
   useOutsideClick(refZonasProd, () => setModalZonasProd(false));
 
   // Colores de productos
-  const colorProductoFiltrado = async (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const colorProductoFiltrado = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value.toLowerCase();
 
     // Escribiendo
     if (query) {
       const filtered = coloresProd.filter((a) =>
-        a.nombre_color.toLowerCase().includes(query)
+        a.name.toLowerCase().includes(query)
       );
       setColoresProd(filtered);
     } else {
-      await loadColores();
+      setColoresProd(Colores);
     }
   };
 
@@ -365,12 +352,12 @@ export const ProductsProvider = ({ children }: PropsWithChildren) => {
     setModalColorProd(false);
   };
 
-  const colorProductoBlur = async (e: React.FocusEvent<HTMLInputElement>) => {
+  const colorProductoBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     const colorName = e.target.value;
-    if (!coloresProd.some((area) => area.nombre_color === colorName)) {
+    if (!coloresProd.some((area) => area.name === colorName)) {
       setColorProducto("");
       setFormProd({ ...formProd, id_color: null });
-      await loadColores();
+      setColoresProd(Colores);
     }
   };
 
@@ -408,44 +395,6 @@ export const ProductsProvider = ({ children }: PropsWithChildren) => {
       setCategoriaProducto("");
       setFormProd({ ...formProd, id_categoria: null });
       await loadCategorias();
-    }
-  };
-
-  // SubCategorias de productos
-  const subCatProductoFiltrado = async (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const query = e.target.value.toLowerCase();
-
-    // Escribiendo
-    if (query) {
-      const filtered = subCatProd.filter((a) =>
-        a.nombre_subcategoria.toLowerCase().includes(query)
-      );
-      setSubCatProd(filtered);
-    } else {
-      await loadSubcategorias();
-    }
-  };
-
-  const subCatProductoSeleccionada = (newName: string, id: number) => {
-    setSubcategoriaProducto(newName);
-
-    setFormProd({
-      ...formProd,
-      id_subcategoria: id,
-    });
-
-    setModalSubCatProd(false);
-  };
-
-  const subCatProductoBlur = async (e: React.FocusEvent<HTMLInputElement>) => {
-    const catName = e.target.value;
-
-    if (!subCatProd.some((area) => area.nombre_subcategoria === catName)) {
-      setSubcategoriaProducto("");
-      setFormProd({ ...formProd, id_subcategoria: null });
-      await loadSubcategorias();
     }
   };
 
@@ -675,22 +624,13 @@ export const ProductsProvider = ({ children }: PropsWithChildren) => {
 
       console.log(formProd);
       const response = await createProduct(formProd);
-
-      if (!response.ok) {
-        setLoading(false);
-        // Cerramos el modal
-        closeFormProd();
-        // Mostramos el toas
-        toast.error("Ocurrio un error al crear el producto");
-        return;
-      }
+      console.log(response);
 
       setLoading(false);
       // Cerramos el modal
       closeFormProd();
       // Mostramos el toas
       toast.success("Producto agregado con exito");
-      loadProducts();
     } else {
       setTimeout(() => {
         // mostramos en consola
@@ -1105,12 +1045,6 @@ export const ProductsProvider = ({ children }: PropsWithChildren) => {
         imagesProducts,
         categoriaProducto,
         catProductoFiltrado,
-        refSubCatProd,
-        modalSubCatProd,
-        handleModalSubCatProd,
-        subCatProductoBlur,
-        subCatProductoFiltrado,
-        subCatProductoSeleccionada,
         colorProducto,
         colorProductoFiltrado,
         marcaProducto,

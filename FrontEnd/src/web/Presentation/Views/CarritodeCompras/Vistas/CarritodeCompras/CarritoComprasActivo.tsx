@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Accordion, AccordionItem,Checkbox } from "@nextui-org/react";
+import { Accordion, AccordionItem, Checkbox } from "@nextui-org/react";
 import { Image } from "@nextui-org/image";
 const CarritoComprasActivo = () => {
     const [cantidad, setCantidad] = useState(1);
@@ -25,7 +25,7 @@ const CarritoComprasActivo = () => {
                             <h1 className="text-[16px]">(1 producto)</h1>
                         </div>
                         <div className="bg-[#fff] rounded-lg px-6">
-                            <Accordion className=" border-b-1" variant="light" >
+                            <Accordion className=" border-b1" variant="light" >
                                 <AccordionItem key="1" aria-label="Accordion 1" title="Vendido por Gucchi">
                                     <div className=" space-y-5">
                                         <div className=" border-t-1 border-b-1  h-[70px] pt-4 items-center justify-center">
@@ -35,8 +35,8 @@ const CarritoComprasActivo = () => {
                                         <div className="flex items-center space-x-5 ">
                                             <Checkbox defaultSelected></Checkbox>
                                             <Image
-                                                width={150}
-                                                height={150}
+                                                width={100}
+                                                height={100}
                                                 alt="NextUI hero Image"
                                                 src="https://nextui.org/images/hero-card-complete.jpeg"
                                             />
@@ -74,7 +74,7 @@ const CarritoComprasActivo = () => {
                                                         +
                                                     </button>
                                                 </div>
-                                          
+
                                             </div>
                                         </div>
                                     </div>
@@ -91,8 +91,48 @@ const CarritoComprasActivo = () => {
                     </div>
                 </div>
 
-                <div className=" w-[30%] h-[500px] bg-slate-100 rounded-lg  ">
-                    <h1>hola</h1>
+                <div className=" w-[30%] h-[500px] bg-slate-100 rounded-lg px-5 py-5  ">
+                    <div className="flex border-b-1 h-[40px] ">
+                        <div>
+                            <h1 className="font-semibold">Productos (1) </h1>
+                        </div>
+                        <div className="ml-auto">
+                            <h1>s/179.99</h1>
+                        </div>
+                    </div>
+                    <div className="flex border-b-1 h-[40px] flex-col space-y-3 ">
+                        <Accordion>
+                            <AccordionItem
+                                key="2"
+                                aria-label="Accordion 1"
+                                className="mx-[-8px]  font-semibold"
+                                title={
+                                    <div className="flex items-center justify-between w-full">
+                                        <span>Descuentos (1)</span>
+                                        <span className="text-right">s/10</span>
+                                    </div>
+                                }
+                            >
+                                <div className="flex items-center justify-between w-full border-b-1">
+                                    <span className="font-light w-[250px]">
+                                        Pinza Amperimétrica Digital Rms Real NVC UNI-T UT201+ Plus</span>
+                                    <span className="text-right">s/10</span>
+                                </div>
+                            </AccordionItem>
+                        </Accordion>
+
+                        <div className="flex border-b-1 h-[160px] ">
+                            <div>
+                                <h1 className="font-semibold">Total </h1>
+                            </div>
+                            <div className="ml-auto">
+                                <h1>s/179.99</h1>
+                            </div>
+                        </div>
+
+                    </div>
+
+
 
                 </div>
 

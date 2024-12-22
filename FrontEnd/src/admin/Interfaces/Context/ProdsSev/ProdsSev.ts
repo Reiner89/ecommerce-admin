@@ -3,7 +3,6 @@ import { Pack } from "../../Pack/Pack";
 import {
   CatProd,
   Color,
-  ColoresProd,
   MarcasProd,
   Producto,
   SubCatProd,
@@ -124,7 +123,7 @@ export interface ProdCtx {
   changeCurPageProds: (newPage: number) => void;
   changeProdPerPage: (newPerPage: number) => void;
   refColorProd: React.RefObject<HTMLDivElement>;
-  coloresProd: ColoresProd[];
+  coloresProd: Color[];
   modalColorProd: boolean;
   handleModalColorProd: () => void;
   colorProductoSeleccionada: (newName: string, id: number) => void;
@@ -135,15 +134,7 @@ export interface ProdCtx {
   handleModalCatProd: () => void;
   catProductoSeleccionada: (newName: string, id: number) => void;
   catProductoBlur: (e: React.FocusEvent<HTMLInputElement>) => void;
-  refSubCatProd: React.RefObject<HTMLDivElement>;
   subCatProd: SubCatProd[];
-  modalSubCatProd: boolean;
-  handleModalSubCatProd: () => void;
-  subCatProductoFiltrado: (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => Promise<void>;
-  subCatProductoSeleccionada: (newName: string, id: number) => void;
-  subCatProductoBlur: (e: React.FocusEvent<HTMLInputElement>) => Promise<void>;
   refMarcaProd: React.RefObject<HTMLDivElement>;
   marcasProd: MarcasProd[];
   modalMarcaProd: boolean;

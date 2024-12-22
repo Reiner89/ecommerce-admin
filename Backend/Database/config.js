@@ -3,9 +3,9 @@ const mysql = require("mysql2/promise");
 
 // Realizamos la conexión a la base de datos
 const pool = mysql.createPool({
-  host: "161.132.42.147",
-  user: "ecommerce",
-  password: "Ecommerce97@",
+  host: "localhost",
+  user: "root",
+  password: "Badangop12",
   database: "Ecommerce",
   waitForConnections: true,
   connectionLimit: 10,

@@ -22,6 +22,8 @@ export interface Consumo {
   consumoCant: number;
   consumoNota: string;
   consumoTipoSereal: number;
+  consumoLote: string;
+  consumoFechaVigencia: string;
 }
 
 export interface Unidad {

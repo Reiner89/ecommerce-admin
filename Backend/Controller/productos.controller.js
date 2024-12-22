@@ -3,6 +3,7 @@ const poll = require("../Database/config");
 const getProducts = async (req, res) => {
   try {
     const [result] = await poll.query("SELECT * FROM Productos");
+    console.log("Get Products:", result);
 
     res.json({ ok: true, productos: result });
   } catch (error) {
@@ -23,8 +24,8 @@ const createProduct = async (req, res) => {
     skuProducto,
     destacadoProducto,
     estadoProducto,
-    fechaCreado,
-    fechaActualizado,
+    fecha_creado,
+    fecha_actualizado,
     id_creador_producto,
     id_color,
     id_categoria,
@@ -33,14 +34,14 @@ const createProduct = async (req, res) => {
     cantSerialesProducto,
   } = req.body;
 
-  // console.log(req.body);
+  console.log(req.body);
+  return;
 
   const imageUrls = req.imageUrls;
-  // console.log(imageUrls);
 
   try {
     const [result] = await poll.query(
-      "INSERT INTO Productos (nombre_producto, nombre_variante_producto, descripcion_producto, sku_producto, destacar_producto, estado_producto, imagen1_producto, imagen2_producto, imagen3_producto, imagen4_producto, fecha_creado, fecha_actualizado, id_creador_producto, id_color, id_categoria, id_subcategoria, id_marca, cantidad_seriales) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+      "INSERT INTO Productos (nombre_producto, nombre_variante_producto, descripcion_producto, sku_producto, destacar_producto, estado_producto, imagen1_producto, imagen2_producto, imagen3_producto, imagen4_producto, fecha_creado, fecha_actualizado, id_creador_producto, id_color, id_categoria, id_subcategoria, id_marca, cantidad_seriales) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
       [
         nombreProducto,
         varianteProducto,
@@ -52,8 +53,8 @@ const createProduct = async (req, res) => {
         imageUrls[1],
         imageUrls[2],
         imageUrls[3],
-        fechaCreado,
-        fechaActualizado,
+        fecha_creado,
+        fecha_actualizado,
         id_creador_producto,
         id_color,
         id_categoria,

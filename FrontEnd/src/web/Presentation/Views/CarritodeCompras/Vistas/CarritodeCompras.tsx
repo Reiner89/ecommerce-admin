@@ -10,7 +10,7 @@ const CarritodeCompras = () => {
           <div>
             <h1 className=" font-bold text-[30px]"> Tu Carro está vacío</h1>
             <h1>¡Aprovecha! Tenemos miles de productos en oferta y oportunidades únicas.</h1>
-            <h1>¡Aprovecha! Tenemos miles de productos en oferta y oportunidades únicas.</h1>
+            
           </div>
 
         </div>

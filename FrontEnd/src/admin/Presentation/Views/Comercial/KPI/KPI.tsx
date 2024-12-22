@@ -63,10 +63,14 @@ export const KPI = () => {
             </div>
             <div className="widgets-bottom w-full flex flex-col md:flex-row px-3 gap-x-3">
               <div className="relative w-[66.5%] bg-white py-5 rounded-2xl">
-                Ventas diarias (Grafica de linea)
+                <h1 className="relative font-semibold">Ventas Diarias</h1>
+                <p className="relative border-b-1" />
+                <Graficos.Lineas />
               </div>
               <div className="relative w-[33%] bg-white py-5 rounded-2xl">
-                Canales de Venta (Grafica de torta)
+                <h1 className="relative font-semibold">Canales de Venta</h1>
+                <p className="relative border-b-1" />
+                <Graficos.Torta />
               </div>
             </div>
           </div>

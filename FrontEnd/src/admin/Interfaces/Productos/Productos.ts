@@ -71,18 +71,13 @@ export interface MarcasProd {
   nombre_marca: string;
 }
 
-export interface ColoresProd {
-  id_color: number;
-  nombre_color: string;
-}
-
 export interface ValuesProduct {
   nombreProducto: string;
   varianteProducto: string;
   descripcionProducto: string;
   skuProducto: string;
-  destacadoProducto: string;
-  estadoProducto: string;
+  destacadoProducto: boolean;
+  estadoProducto: boolean;
   fechaCreado: number;
   fechaActualizado: string;
   id_creador_producto: number | null;
@@ -376,6 +371,17 @@ export const Productos: Producto[] = [
     cantSerialesProducto: "2",
     precioProducto: 35.5,
   },
+];
+
+export const Colores: Color[] = [
+  { id: 1, name: "Negro" },
+  { id: 2, name: "Blanco" },
+  { id: 3, name: "Azul" },
+  { id: 4, name: "Verde" },
+  { id: 5, name: "Rojo" },
+  { id: 6, name: "Amarillo" },
+  { id: 7, name: "Naranja" },
+  { id: 8, name: "Morado" },
 ];
 
 export const Almacenes: Color[] = [

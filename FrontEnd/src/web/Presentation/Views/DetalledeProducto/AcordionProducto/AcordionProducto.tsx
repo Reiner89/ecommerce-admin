@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { Image } from '@nextui-org/react';
 import { Box } from '@mui/material';
-import zapato1 from '../../../../assets/Img/DescripcionProducto/5FD01200012_1-zapato-de-vestir-clasico-de-cuero-para-hombre-color-canela.webp'
-import zapato2 from '../../../../assets/Img/DescripcionProducto/Zapatos-De-Vestir-Calimod-Hombres-Vfd-003--Cuero-Marron---41.webp'
-import zapato3 from '../../../../assets/Img/DescripcionProducto/imageUrl_1.webp'
+import Smartwatch_Aventadro from "../../../../assets/Img/ListadeProductos/Relojes/Smartwatch Aventador Cerchio.webp"
+import zapato2 from "../../../../assets/Img/ListadeProductos/Relojes/relojo.webp"
 
 
-const images = [zapato1, zapato2, zapato3];
+
+const images = [Smartwatch_Aventadro, zapato2];
 
 const ImageGallery = () => {
     const [selectedImage, setSelectedImage] = useState(images[0]);

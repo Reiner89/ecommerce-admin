@@ -60,6 +60,8 @@ export const Body = () => {
               id="loteConsumo"
               name="loteConsumo"
               placeholder=""
+              value={formConsumo.consumoLote}
+              onChange={changeFormCons}
               className={Styles.inputS}
               required
             />
@@ -75,6 +77,8 @@ export const Body = () => {
               name="fechaConsumo"
               placeholder=""
               className={Styles.inputS}
+              value={formConsumo.consumoFechaVigencia}
+              onChange={changeFormCons}
               required
             />
             <label htmlFor="fechaConsumo" className={Styles.labelS}>

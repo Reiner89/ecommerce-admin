@@ -2,7 +2,7 @@ const poll = require("../Database/config");
 
 const getColores = async (req, res) => {
   try {
-    const [result] = await poll.query("SELECT * FROM ColoresProducto");
+    const [result] = await poll.query("SELECT * FROM Color");
 
     res.json({ ok: true, colores: result });
   } catch (error) {
@@ -20,7 +20,7 @@ const createColor = async (req, res) => {
     const { nombre } = req.body;
 
     const [result] = await poll.query(
-      "INSERT INTO ColoresProducto (nombre_color) VALUES (?)",
+      "INSERT INTO Color (nombre_color) VALUES (?)",
       [nombre]
     );
 

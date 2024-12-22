@@ -7,7 +7,7 @@ const getMarcas = async (req, res) => {
 
     if (id) {
       const [result] = await poll.query(
-        "SELECT id_marca, nombre_marca FROM MarcaProducto WHERE id_subcategoria = ?",
+        "SELECT id_marca, nombre_marca FROM Marca WHERE id_subcategoria = ?",
         [id]
       );
 
@@ -18,7 +18,7 @@ const getMarcas = async (req, res) => {
     } else {
       // Si no hay id de subcategoria, obtenemos todas las marcas
       const [result] = await poll.query(
-        "SELECT id_marca, nombre_marca FROM MarcaProducto"
+        "SELECT id_marca, nombre_marca FROM Marca"
       );
 
       res.json({

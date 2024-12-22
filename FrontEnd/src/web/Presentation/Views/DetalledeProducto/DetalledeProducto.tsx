@@ -30,7 +30,7 @@ const DetalledeProducto = () => {
               <Link to="/SeccionFunkos">Hombre</Link> 
             </BreadcrumbItem>
             <BreadcrumbItem className="hover:text-blue-600 transition-colors duration-300">
-              Zapatos
+              Relojes
             </BreadcrumbItem>
            
           </Breadcrumbs>
@@ -40,10 +40,10 @@ const DetalledeProducto = () => {
             <ImageGallery />
           </div>
           <div className=" space-y-5">
-            <h1 className='text-2xl font-bold'>Zapatos</h1>
-            <h2 className='text-2xl font-bold'>Zapatos Formales Hombre Calimod Marrón</h2>
+            <h1 className='text-2xl font-bold'>Relojes</h1>
+            <h2 className='text-2xl font-bold'>Smartwatch Aventador Cerchio</h2>
             <CalificacionProducto rating={4.2} reviews={9} />
-            <p className='text-[15px]'>Precio :  s/150.00 </p>
+            <p className='text-[15px]'>Precio :  s/609.00 </p>
             <div className="  flex  items-center w-[400px] ">
 
               <Select
@@ -82,7 +82,7 @@ const DetalledeProducto = () => {
                   className="w-[700px]"
                 >
                   <div className=" w-[700px] h-[100px]">
-                    <p className="text-[15px]">Descubre la combinación perfecta entre elegancia y confort con los Zapatos Formales Calimod Marrón. Diseñados especialmente para el hombre moderno, estos zapatos destacan por su calidad premium y estilo sofisticado, ideales para ocasiones formales o laborales. Fabricados con materiales duraderos y un acabado impecable, ofrecen comodidad durante todo el día gracias a su plantilla ergonómica y suela antideslizante. Complementa tu guardarropa con este esencial versátil que refleja buen gusto y distinción. ¡Atrévete a lucir siempre impecable con Calimod!</p>
+                    <p className="text-[15px]">Descubre la combinación perfecta entre elegancia y confort con los relojes Formales. Diseñados especialmente para el hombre moderno, estos relojes destacan por su calidad premium y estilo sofisticado, ideales para ocasiones formales o laborales. Fabricados con materiales duraderos y un acabado impecable, ofrecen comodidad durante todo el día gracias a su plantilla ergonómica y suela antideslizante. Complementa tu guardarropa con este esencial versátil que refleja buen gusto y distinción. ¡Atrévete a lucir siempre impecable con Calimod!</p>
                   </div>
                 </AccordionItem>
 

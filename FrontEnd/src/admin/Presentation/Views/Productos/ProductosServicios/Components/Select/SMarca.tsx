@@ -13,13 +13,11 @@ export const SMarca = () => {
       <div className="relative text-xs flex flex-col gap-3">
         {marcasProd.map((marca) => (
           <p
-            key={marca.id_marca}
+            key={marca.id}
             className="text-xs text-[rgb(96_125_139/1)] px-3 py-2 hover:bg-gray-200 cursor-pointer"
-            onClick={() =>
-              marcaProductoSeleccionada(marca.nombre_marca, marca.id_marca)
-            }
+            onClick={() => marcaProductoSeleccionada(marca.name, marca.id)}
           >
-            {marca.nombre_marca}
+            {marca.name}
           </p>
         ))}
       </div>

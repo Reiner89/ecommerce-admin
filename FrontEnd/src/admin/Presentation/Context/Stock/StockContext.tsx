@@ -524,6 +524,8 @@ export const StockProvider = ({ children }: React.PropsWithChildren) => {
     consumoNota: "",
     consumoTipoSereal: 0,
     consumoTipo: "",
+    consumoLote: "",
+    consumoFechaVigencia: "",
   };
 
   // Formulario de consumo
@@ -661,6 +663,9 @@ export const StockProvider = ({ children }: React.PropsWithChildren) => {
       consumoProd: doc.nombreProducto,
       consumoColorProd: doc.color,
       consumoUMProd: doc.unidadMedida,
+      consumoLote: doc.consumoLote,
+      consumoFechaVigencia: doc.consumoFechaVigencia,
+      consumoCant: doc.consumoCant,
     }));
     setModalNrosDocs(false);
   };

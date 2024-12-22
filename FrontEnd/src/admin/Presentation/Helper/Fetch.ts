@@ -201,7 +201,6 @@ export const createProduct = async (data: ValuesProduct) => {
   data.imagenProducto.forEach((imagen) => {
     formData.append("imagenProducto", imagen);
   });
-  formData.append("cantSerialesProducto", data.cantSerialesProducto.toString());
 
   try {
     const response = await fetch(url, {

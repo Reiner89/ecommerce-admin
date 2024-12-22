@@ -25,22 +25,7 @@ const Paris_Texas = () => {
                         <div className="text-tiny">¿En qué puedo ayudarte?</div>
                     </div>
 
-                    <div className="bg-[#18cdff] h-[50px] flex flex-col p-[5%] justify-center rounded-lg">
-                        <div className="text-small font-bold">Bienvenido</div>
-                        <div className="text-tiny">¿En qué puedo ayudarte?</div>
-                    </div>
-                    <div className="bg-[#18cdff] h-[50px] flex flex-col p-[5%] justify-center rounded-lg">
-                        <div className="text-small font-bold">Bienvenido</div>
-                        <div className="text-tiny">¿En qué puedo ayudarte?</div>
-                    </div>
-                    <div className="bg-[#18cdff] h-[50px] flex flex-col p-[5%] justify-center rounded-lg">
-                        <div className="text-small font-bold">Bienvenido</div>
-                        <div className="text-tiny">¿En qué puedo ayudarte?</div>
-                    </div>
-                    <div className="bg-[#18cdff] h-[50px] flex flex-col p-[5%] justify-center rounded-lg">
-                        <div className="text-small font-bold">Bienvenido</div>
-                        <div className="text-tiny">¿En qué puedo ayudarte?</div>
-                    </div>
+                    
 
                 </div>
                 <div className="mt-4">

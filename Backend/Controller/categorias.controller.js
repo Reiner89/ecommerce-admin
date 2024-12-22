@@ -3,7 +3,7 @@ const poll = require("../Database/config");
 const getCategorias = async (_req, res) => {
   try {
     const [result] = await poll.query(
-      "SELECT id_categoria, nombre_categoria FROM CategoriaProducto"
+      "SELECT id_categoria, nombre_categoria FROM Categoria"
     );
 
     res.json({
@@ -25,7 +25,7 @@ const createCategoria = async (req, res) => {
     const { nombre } = req.body;
 
     const [result] = await poll.query(
-      "INSERT INTO CategoriaProducto (nombre_categoria) VALUES (?)",
+      "INSERT INTO Categoria (nombre_categoria) VALUES (?)",
       [nombre]
     );
 

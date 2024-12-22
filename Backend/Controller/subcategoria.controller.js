@@ -6,7 +6,7 @@ const getSubCategorias = async (req, res) => {
 
     if (id) {
       const [result] = await poll.query(
-        "SELECT id_subcategoria, nombre_subcategoria FROM SubCategoriaProducto WHERE id_categoria = ?",
+        "SELECT id_subcategoria, nombre_subcategoria FROM SubCategoria WHERE id_categoria = ?",
         [id]
       );
 
@@ -16,7 +16,7 @@ const getSubCategorias = async (req, res) => {
       });
     } else {
       const [result] = await poll.query(
-        "SELECT id_subcategoria, nombre_subcategoria FROM SubCategoriaProducto"
+        "SELECT id_subcategoria, nombre_subcategoria FROM SubCategoria"
       );
 
       res.json({

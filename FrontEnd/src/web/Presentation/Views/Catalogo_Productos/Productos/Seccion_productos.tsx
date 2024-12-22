@@ -1,4 +1,5 @@
 import Dropdown_recomendados from "../dropdown_recomendados";
+import { Link } from "react-router-dom";
 import { Pagination } from "@nextui-org/react";
 import Smartwatch_Aventadro from "../../../../assets/Img/ListadeProductos/Relojes/Smartwatch Aventador Cerchio.webp";
 import RelojMason from "../../../../assets/Img/ListadeProductos/Relojes/Reloj Mason 1791788.webp";
@@ -23,6 +24,7 @@ function Seccion_productos() {
       precio: "S/609",
       precioAnterior: "S/ 1,390",
       imagen: Smartwatch_Aventadro,
+      link: "/descripcion",
     },
     {
       id: 2,
@@ -31,6 +33,7 @@ function Seccion_productos() {
       precio: "S/ 385",
       precioAnterior: "S/ 750",
       imagen: RelojMason,
+      link: "/descripcion",
     },
     {
       id: 3,
@@ -39,6 +42,7 @@ function Seccion_productos() {
       precio: "S/ 388",
       precioAnterior: "S/ 776",
       imagen: RelojTommy1791476,
+      link: "/descripcion",
     },
     {
       id: 4,
@@ -47,6 +51,7 @@ function Seccion_productos() {
       precio: "S/ 659",
       precioAnterior: "S/1,139",
       imagen: SmartwatchRex,
+      link: "/descripcion",
     },
     {
       id: 5,
@@ -55,6 +60,7 @@ function Seccion_productos() {
       precio: "S/ 179",
       precioAnterior: "S/ 300",
       imagen: RedmiWatch5,
+      link: "/descripcion",
     },
     {
       id: 6,
@@ -63,6 +69,7 @@ function Seccion_productos() {
       precio: "S/ 418",
       precioAnterior: "S/ 836",
       imagen: RelojTommyHilfigerDaniel1710414,
+      link: "/descripcion",
     },
     {
       id: 7,
@@ -71,6 +78,7 @@ function Seccion_productos() {
       precio: "S/ 388",
       precioAnterior: "S/ 776",
       imagen: RelojTommyHilfigerBaker,
+      link: "/descripcion",
     },
     {
       id: 8,
@@ -79,6 +87,7 @@ function Seccion_productos() {
       precio: "S/ 17.90",
       precioAnterior: "S/ 29.90",
       imagen: RelojPared,
+      link: "/descripcion",
     },
     {
       id: 9,
@@ -87,6 +96,7 @@ function Seccion_productos() {
       precio: "S/ 80",
       precioAnterior: "S/ 160",
       imagen: RelojHombreDeportivo,
+      link: "/descripcion",
     },
     {
       id: 10,
@@ -95,6 +105,7 @@ function Seccion_productos() {
       precio: "S/400",
       precioAnterior: "S/ 850",
       imagen: RelojTommyHilfigerLuke,
+      link: "/descripcion",
     },
     {
       id: 11,
@@ -103,6 +114,7 @@ function Seccion_productos() {
       precio: "S/400",
       precioAnterior: "S/ 850",
       imagen: RelojHombreDeportivo,
+      link: "/descripcion",
     },
     {
       id: 12,
@@ -111,6 +123,7 @@ function Seccion_productos() {
       precio: "S/23.00",
       precioAnterior: "S/ 29.90",
       imagen: RelojWoodenNatural29cm,
+      link: "/descripcion",
     },
   ];
 
@@ -127,26 +140,29 @@ function Seccion_productos() {
 
       <div className="grid grid-cols-4 gap-6">
         {productos.map((producto) => (
-          <div
+          <Link
+            to={producto.link}
             key={producto.id}
-            className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition"
+            className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition block"
           >
-            <div className="h-40  rounded-lg mb-3">
-              <img
-                src={producto.imagen}
-                alt={producto.descripcion}
-                className="object-contain h-full w-full"
-              />
+            <div>
+              <div className="h-40 rounded-lg mb-3">
+                <img
+                  src={producto.imagen}
+                  alt={producto.descripcion}
+                  className="object-contain h-full w-full"
+                />
+              </div>
+              <h3 className="text-sm font-semibold">{producto.marca}</h3>
+              <p className="text-xs text-gray-600">{producto.descripcion}</p>
+              <p className="text-red-500 font-semibold mt-2">
+                {producto.precio}{" "}
+                <span className="line-through text-gray-500">
+                  {producto.precioAnterior}
+                </span>
+              </p>
             </div>
-            <h3 className="text-sm font-semibold">{producto.marca}</h3>
-            <p className="text-xs text-gray-600">{producto.descripcion}</p>
-            <p className="text-red-500 font-semibold mt-2">
-              {producto.precio}{" "}
-              <span className="line-through text-gray-500">
-                {producto.precioAnterior}
-              </span>
-            </p>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
