@@ -31,7 +31,7 @@ export const SocketProvider = ({ children }: React.PropsWithChildren) => {
   useEffect(() => {
     if (responseToken) {
       conectarSocket();
-      console.log("cliente conectado");
+      console.log("Administrador conectado");
       return;
     }
   }, [responseToken, conectarSocket]);
@@ -40,7 +40,7 @@ export const SocketProvider = ({ children }: React.PropsWithChildren) => {
   useEffect(() => {
     if (!responseToken) {
       desconectarSocket();
-      console.log("cliente desconectado");
+      console.log("Administrador desconectado");
       return;
     }
 

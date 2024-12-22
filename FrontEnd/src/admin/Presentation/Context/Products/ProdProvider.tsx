@@ -38,7 +38,7 @@ import { AuthContext } from "../Auth/AuthContext";
 import moment from "moment";
 
 export const ProductsProvider = ({ children }: PropsWithChildren) => {
-  const { auth, responseToken } = useContext(AuthContext);
+  const { auth } = useContext(AuthContext);
 
   // Tablas
   // Productos
@@ -502,13 +502,14 @@ export const ProductsProvider = ({ children }: PropsWithChildren) => {
 
   // Cargar los datos en la tabla
   useEffect(() => {
+    console.log("Cargando productos");
     loadProducts();
     loadCategorias();
     loadSubcategorias();
     loadMarcas();
     loadColores();
     loadPacks();
-  }, [responseToken]);
+  }, []);
 
   // Ejecutar la funcion de exportar
   const handleExportProducts = () => {
